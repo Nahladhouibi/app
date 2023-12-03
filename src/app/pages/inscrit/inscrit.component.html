@@ -1,0 +1,43 @@
+<div class="banner">
+<div class="container">
+    <h1> Créer une Cagnotte</h1>
+    <div *ngIf="!campaignCreated; else campaignDetails">
+
+      <form (submit)="createCampaign()">
+        <label for="campaignName">Nom de la Campagne:</label>
+        <input type="text" id="campaignName" [(ngModel)]="newCampaign.name" required>
+  
+        <label for="goalAmount">Objectif de Financement:</label>
+        <input type="number" id="goalAmount" [(ngModel)]="newCampaign.goalAmount" required>
+  
+        <label for="description">Description de la Campagne:</label>
+        <textarea id="description" [(ngModel)]="newCampaign.description" required></textarea>
+  
+        <button type="submit">Créer la Campagne</button>
+    </form> 
+    </div>
+    <ng-template #campaignDetails>
+      <h2>Détails de la Campagne</h2>
+      <p>Nom de la Campagne: {{ createdCampaign.name }}</p>
+      <p>Objectif de Financement: {{ createdCampaign.goalAmount | currency:'USD':'symbol':'1.2-2' }}</p>
+      <p>Fonds Collectés: {{ createdCampaign.currentAmount | currency:'USD':'symbol':'1.2-2' }}</p>
+      <p>Description: {{ createdCampaign.description }}</p>
+      <button (click)="contribute()">Contribuer</button>
+    </ng-template>
+    <ng-template>
+    <form>
+    <label for="userName">Votre Nom:</label>
+    <input type="text" id="userName" [(ngModel)]="newUser.userName" required>
+
+    <label for="email">Votre Email:</label>
+    <input type="email" id="email" [(ngModel)]="newUser.email" required>
+    <label for="password">mot de passe:</label>
+    <input type="password" id="password" [(ngModel)]="newUser.password" required>
+
+    <button type="submit">inscrit</button>
+  </form>
+    
+
+    </ng-template>
+  </div>
+</div>

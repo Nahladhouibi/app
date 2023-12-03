@@ -1,0 +1,41 @@
+.banner
+{
+    background-image: url('../../../assets/crow.png');
+    height: 600px;
+    background-position: center top;
+    background-size: cover;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    
+  }
+
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
